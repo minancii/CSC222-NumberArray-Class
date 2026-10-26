@@ -43,6 +43,22 @@ int main()
     // Test 2: a five-element array with known numbers.
     cout << "\nTEST 2 - Parameterized constructor and valid indexes" << endl;
     NumberArray numbers(5);
+    // Check that the parameterized constructor starts with zeros.
+    bool fiveZeros = true;
+
+    for (int i = 0; i < 5; i++)
+    {
+        if (numbers.getNumber(i) != 0.0)
+        {
+            fiveZeros = false;
+        }
+    }
+
+    total++;
+    if (fiveZeros) passed++;
+
+    cout << "Parameterized constructor starts with zeros: "
+        << (fiveZeros ? "PASS" : "FAIL") << endl;
     double knownValues[5] = { 4.5, -2.0, 0.0, 8.5, 9.0 };
     for (int i = 0; i < 5; i++)
     {
